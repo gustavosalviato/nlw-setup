@@ -1,22 +1,16 @@
 import * as Progress from '@radix-ui/react-progress';
 import { useEffect, useState } from 'react';
 
-export function ProgressBar() {
-    const [progress, setProgress] = useState<number>(13)
+interface ProgressBarProps {
+    progress: number
+}
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setProgress(10)
-        }, 500)
-
-        return () => clearInterval(timer)
-    }, [])
-
+export function ProgressBar(props: ProgressBarProps) {
     return (
         <Progress.Root className='relative overflow-hidden h-3 mt-3 bg-zinc-700 rounded-lg'>
             <Progress.Indicator
                 className='h-full w-full bg-violet-500 rounded-lg'
-                style={{ transition: 'transition: transform 660ms cubic-bezier(0.65, 0, 0.35, 1)', transform: `translateX(-${100 - progress}%)` }}
+                style={{ transition: 'transition: transform 660ms cubic-bezier(0.65, 0, 0.35, 1)', transform: `translateX(-${100 - props.progress}%)` }}
             />
         </Progress.Root>
     )
