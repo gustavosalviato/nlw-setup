@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter';
+}
+
+:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px #7C3AED;
+}
