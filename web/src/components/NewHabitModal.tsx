@@ -1,5 +1,17 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { Check, X } from 'phosphor-react'
+import { CheckBox } from './CheckBox';
+
+const availableDays = [
+  'Domingo-feira',
+  'Segunda-feira',
+  'Terça-feira',
+  'Quarta-feira',
+  'Quinta-feira',
+  'Sexta-feira',
+  'Sábado',
+]
+
 export function NewHabitModal() {
   return (
     <form className='w-full flex flex-col '>
@@ -16,7 +28,15 @@ export function NewHabitModal() {
         className='w-6 h-6 absolute top-6 right-6 text-zinc-400'
       >
         <X size={24} />
-      </Dialog.Close >w
+      </Dialog.Close >
+
+      <div className='mt-3 flex flex-col gap-2'>
+        {availableDays.map((weekDay, i) => (
+          <CheckBox
+            title={weekDay}
+          />
+        ))}
+      </div>
 
       <button className='flex gap-3 font-bold bg-green-600 mt-6 rounded-lg px-6 py-4 items-center justify-center hover:bg-green-500'>
         <Check size={20} weight="bold" />
