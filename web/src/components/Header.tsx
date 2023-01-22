@@ -9,9 +9,10 @@ export function Header() {
       <img src={logoImage} alt="Habits" />
 
       <Dialog.Root>
-        <Dialog.Trigger>
+        <Dialog.Trigger className='focus:outline-none'>
           <button
-            className='border border-violet-500 font-semibold px-6 py-4 rounded-lg flex gap-3 hover:border-violet-300'
+            className='border border-violet-500 font-semibold px-6 py-4 rounded-lg flex gap-3 hover:border-violet-300
+            transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-violet-600'
           >
             <Plus size={20} className="text-violet-500" />
             Novo hábito
