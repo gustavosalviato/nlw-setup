@@ -20,7 +20,7 @@ export function HabitDay({ amount = 0, defaultCompleted = 0, date }: HabitDayPro
     const dayAndMonth = dayjs(date).format('DD/MM')
 
     function handleAmountCompletedChange(newCompleted: number) {
-        console.log(newCompleted)
+        setCompleted(newCompleted)
     }
 
     return (
